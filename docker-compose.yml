@@ -1,12 +1,12 @@
-squid:
-  image: sameersbn/squid:latest
-  container_name: squid
+tinyproxy:
+  image: b79ce5b117d8
+  container_name: tinyproxy
   ports:
-    - 8123:3128
-  volumes:
-    - ./squid/cache:/var/spool/squid
-    - ./squid/squid.conf:/etc/squid/squid.conf
-    - ./squid/passwords:/etc/squid/passwords
+    - 8123:8888
+  command: ANY
+  environment:
+    - BASIC_AUTH_USER=${BASIC_AUTH_USER}
+    - BASIC_AUTH_PASSWORD=${BASIC_AUTH_PASSWORD}
   restart: unless-stopped
 
 ss5:
