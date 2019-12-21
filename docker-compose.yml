@@ -1,0 +1,28 @@
+squid:
+  image: sameersbn/squid:latest
+  ports:
+    - 8123:3128
+  volumes:
+    - ./squid/cache:/var/spool/squid
+    - ./squid/squid.conf:/etc/squid/squid.conf
+    - ./squid/passwords:/etc/squid/passwords
+  restart: unless-stopped
+
+ss5:
+  image: dijedodol/simple-socks5-server:latest
+  ports:
+    - 8080:1080
+  environment:
+    - SSS_USERNAME=${SSS_USERNAME}
+    - SSS_PASSWORD=${SSS_PASSWORD}
+  restart: unless-stopped
+
+telegram-proxy:
+  image: telegrammessenger/proxy:latest
+  container_name: tg-proxy
+  ports:
+    - "443:443" 
+  volumes:
+    - "proxy-config:/data"
+  restart: unless-stopped
+
