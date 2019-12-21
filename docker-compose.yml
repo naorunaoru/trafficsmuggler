@@ -10,7 +10,7 @@ tinyproxy:
   restart: unless-stopped
 
 ss5:
-  image: dijedodol/simple-socks5-server:latest
+  image: dijedodol/simple-socks5-server
   container_name: ss5
   ports:
     - 8080:1080
