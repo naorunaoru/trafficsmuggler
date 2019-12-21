@@ -1,12 +1,12 @@
 tinyproxy:
-  image: b79ce5b117d8
+  image: 2ddc7e3ab1da
   container_name: tinyproxy
   ports:
     - 8123:8888
   command: ANY
   environment:
-    - BASIC_AUTH_USER=${BASIC_AUTH_USER}
-    - BASIC_AUTH_PASSWORD=${BASIC_AUTH_PASSWORD}
+    - BASIC_AUTH_USER=${HTTP_USER}
+    - BASIC_AUTH_PASSWORD=${HTTP_PASSWORD}
   restart: unless-stopped
 
 ss5:
@@ -15,8 +15,8 @@ ss5:
   ports:
     - 8080:1080
   environment:
-    - SSS_USERNAME=${SSS_USERNAME}
-    - SSS_PASSWORD=${SSS_PASSWORD}
+    - SSS_USERNAME=${SOCKS5_USER}
+    - SSS_PASSWORD=${SOCKS5_PASSWORD}
   restart: unless-stopped
 
 telegram-proxy:

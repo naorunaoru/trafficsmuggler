@@ -6,8 +6,12 @@
 - run `docker-compose up -d`
 
 ## ports
-- 8080 for http proxy
-- 8123 for socks5
+- 8123 for http proxy
+- 8080 for socks5
 - 443 for mtproto
 
-socks5 credentials are provided with `SSS_USERNAME` and `SSS_PASSWORD` environment variables, you can create a .env file with them.
+## authentication
+
+HTTP proxy authentication is provided with `HTTP_USER` and `HTTP_PASSWORD` environment variables.
+
+socks5 proxy autheitication is provided with `SOCKS5_USER` and `SOCKS5_PASSWORD` environment variables.
