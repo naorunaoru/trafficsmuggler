@@ -36,3 +36,6 @@ Environment variables should be set in `.env` file.
 ## funny stuff
 
 Tinyproxy doesn't like special characters in user/password fields.
+
+I'm not responsible for your conviction or prolapsed anus, this crappy config is provided as is.
+
