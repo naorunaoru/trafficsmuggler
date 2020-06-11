@@ -1,5 +1,5 @@
 tinyproxy:
-  image: 2ddc7e3ab1da
+  image: monokal/tinyproxy
   container_name: tinyproxy
   ports:
     - 8123:8888
